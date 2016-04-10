@@ -10,5 +10,9 @@ package com.service.impl;
  * @author home
  */
 public class FileRedactor {
+
+    public FileRedactor() {
+    }
+    
     
 }
