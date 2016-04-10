@@ -5,6 +5,8 @@
  */
 package com.service.impl;
 
+import java.io.File;
+
 /**
  *
  * @author home
@@ -13,7 +15,7 @@ public class FileRedactor {
     
     private String fileName;
     
-    
+    File file;
     public FileRedactor() {
     }
     
