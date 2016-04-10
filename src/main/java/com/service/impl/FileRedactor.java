@@ -11,7 +11,7 @@ package com.service.impl;
  */
 public class FileRedactor {
     
-    
+    private String fileName;
     
     public FileRedactor() {
     }
