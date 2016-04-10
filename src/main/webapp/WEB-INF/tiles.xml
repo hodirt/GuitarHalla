@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE tiles-definitions PUBLIC 
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" 
+        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd"> 
+<tiles-definitions> 
+    <!-- Description of template web page that will have 3 attributes: header, footer  
+    and main content (body) --> 
+    <!-- Опис шаблонної веб сторінки, на якій буде 3 параметри: хедер, футер  
+    і головний контент --> 
+    <definition name="base.definition" template="/WEB-INF/views/tiles/layout.jsp"> 
+        <put-attribute name="header" value="/WEB-INF/views/tiles/header.jsp"></put-attribute> 
+        <put-attribute name="footer" value="/WEB-INF/views/tiles/footer.jsp"></put-attribute> 
+        <!-- Here body must be empty, values will come in child definitions --> 
+        <!-- Задаєм пустим, значення будуть приходити в наступних definition --> 
+        <put-attribute name="body" value=""></put-attribute>  
+    </definition> 
+    
+    
+    <definition name="index" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/index.jsp"></put-attribute> 
+        <put-attribute name="title" value="GuitarHalla"></put-attribute> 
+    </definition> 
+    
+    <definition name="color" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/color.jsp"></put-attribute> 
+        <put-attribute name="title" value="Color"></put-attribute> 
+    </definition> 
+    
+    <definition name="registr" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/registr.jsp"></put-attribute> 
+        <put-attribute name="title" value="Registration"></put-attribute> 
+    </definition> 
+    
+    <definition name="tree" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/tree.jsp"></put-attribute> 
+        <put-attribute name="title" value="Tree"></put-attribute> 
+    </definition> 
+    
+    <definition name="securityTest" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/securityTest.jsp"></put-attribute> 
+        <put-attribute name="title" value="ST"></put-attribute> 
+    </definition> 
+    
+    <definition name="login" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/login.jsp"></put-attribute> 
+        <put-attribute name="title" value="Login"></put-attribute> 
+    </definition> 
+    
+    <definition name="settings" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/settings.jsp"></put-attribute> 
+        <put-attribute name="title" value="My Page"></put-attribute> 
+    </definition> 
+    
+    <definition name="electricGuitars" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/electricGuitars.jsp"></put-attribute> 
+        <put-attribute name="title" value="Electric Guitars"></put-attribute> 
+    </definition> 
+    
+    <definition name="particularGuitar" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/particularGuitar.jsp"></put-attribute> 
+        <put-attribute name="title" value="Guitar"></put-attribute> 
+    </definition> 
+    
+    <definition name="addGuitar" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/addGuitar.jsp"></put-attribute> 
+        <put-attribute name="title" value="Add Guitar"></put-attribute> 
+    </definition> 
+    
+</tiles-definitions>
