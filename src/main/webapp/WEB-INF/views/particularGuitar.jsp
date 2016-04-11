@@ -46,12 +46,16 @@
                     <td>${guitar.treeOfFingerbar}</td>
                 </tr>
                 <tr>
-                    <td>Tree of fingerbar:</td>
-                    <td>${guitar.treeOfFingerbar}</td>
-                </tr>
-                <tr>
                     <td>Tree of main part:</td>
                     <td>${guitar.treeOfMainPart}</td>
+                </tr>
+                <tr>
+                    <td>Pickups:</td>
+                    <td>${guitar.pickups}</td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td>${guitar.price}</td>
                 </tr>
             </table>
                 <input type="submit" name="add to card"/>

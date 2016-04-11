@@ -1,6 +1,7 @@
 package com.controller;
 
 
+import com.service.ColorService;
 import com.service.CustomerService;
 import com.service.GuitarService;
 import java.io.IOException;
@@ -19,6 +20,9 @@ public class IndexController {
     
     @Autowired
     private GuitarService guitarService;
+    
+    @Autowired
+    private ColorService colorService;
 
     @RequestMapping("/")
     public String indexView() {
@@ -27,18 +31,10 @@ public class IndexController {
     
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String addLogoFile(@RequestParam(value = "file") MultipartFile file,  Integer id) throws IOException{
-        if(!(file.getOriginalFilename().endsWith(".jpeg"))
-                || file.getOriginalFilename().endsWith(".png")
-                || file.getOriginalFilename().endsWith(".jpg")){
-            guitarService.setImage(file.getBytes(), null);
-            return "redirect:/?" + "wrongfile = true";
-        } else if(file.getBytes().length >= 524288000){
-            return "redirect:/?" + "bigfile = true";
-        } else {
-            //Customer customer = customerService.findById(id);
-            guitarService.setImage(file.getBytes(), null);
+        
+            guitarService.setImage(file.getBytes());
             return "redirect:/";
-        }
+        
     }
 
 	

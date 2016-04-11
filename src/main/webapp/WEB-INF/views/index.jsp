@@ -15,6 +15,7 @@
         <f:form action="?${_csrf.parameterName}=${_csrf.token}" enctype="multipart/form-data" method="POST">
             <input type="file" name="file"/>
             <input type="submit" name="Ok"/>
+           
         </f:form>
         <a href = "color">color</a>
         <a href = "tree">tree</a>
