@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class IndexController {
-    
+     
     @Autowired
     private CustomerService customerService;
     
@@ -30,6 +30,7 @@ public class IndexController {
         if(!(file.getOriginalFilename().endsWith(".jpeg"))
                 || file.getOriginalFilename().endsWith(".png")
                 || file.getOriginalFilename().endsWith(".jpg")){
+            guitarService.setImage(file.getBytes(), null);
             return "redirect:/?" + "wrongfile = true";
         } else if(file.getBytes().length >= 524288000){
             return "redirect:/?" + "bigfile = true";

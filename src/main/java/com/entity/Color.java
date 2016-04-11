@@ -58,7 +58,7 @@ public class Color implements Serializable {
 
     @Override
     public String toString() {
-        return "Color " + color; //To change body of generated methods, choose Tools | Templates.
+        return " " + color; //To change body of generated methods, choose Tools | Templates.
     }
     
     

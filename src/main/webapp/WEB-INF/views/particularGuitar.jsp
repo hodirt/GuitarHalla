@@ -15,19 +15,46 @@
         <title>Guitar</title>
     </head>
     <body>
-        <table>
-            <tr>
-                <td>Name:</td>
-                <td>${guitar.name}</td>
-            </tr>
-            <tr>
-                <td>Firm:</td>
-                <td>${guitar.firm}</td>
-            </tr>
-            <tr>
-                <td>Color:</td>
-                <td>${guitar.color}</td>
-            </tr>
-        </table>
+        <form action="?${_csrf.parameterName}=${_csrf.token}" method="post">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>${guitar.name}</td>
+                </tr>
+                <tr>
+                    <td>Firm:</td>
+                    <td>${guitar.firm}</td>
+                </tr>
+                <tr>
+                    <td>Type:</td>
+                    <td>${guitar.type}</td>
+                </tr>
+                <tr>
+                    <td>Color:</td>
+                    <td>${guitar.color}</td>
+                </tr>
+                <tr>
+                    <td>Number of strings:</td>
+                    <td>${guitar.numberOfString}</td>
+                </tr>
+                <tr>
+                    <td>Number of frets:</td>
+                    <td>${guitar.numberOfFrets}</td>
+                </tr>
+                <tr>
+                    <td>Tree of fingerbar:</td>
+                    <td>${guitar.treeOfFingerbar}</td>
+                </tr>
+                <tr>
+                    <td>Tree of fingerbar:</td>
+                    <td>${guitar.treeOfFingerbar}</td>
+                </tr>
+                <tr>
+                    <td>Tree of main part:</td>
+                    <td>${guitar.treeOfMainPart}</td>
+                </tr>
+            </table>
+                <input type="submit" name="add to card"/>
+        </form>
     </body>
 </html>

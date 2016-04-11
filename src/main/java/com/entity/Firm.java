@@ -66,6 +66,11 @@ public class Firm implements Serializable {
     public void setFirm(String firm) {
         this.firm = firm;
     }
+
+    @Override
+    public String toString() {
+        return firm;
+    }
     
     
 }

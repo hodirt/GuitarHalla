@@ -62,7 +62,7 @@ public class GuitarServiceImpl implements GuitarService{
 
     @Override
     public Guitar setImage(byte[] b, Guitar g) {
-        try (FileOutputStream file = new FileOutputStream(new File("guitarImage"))){
+        try (FileOutputStream file = new FileOutputStream(new File("C://Users//home//Documents//NetBeansProjects//GHTest//src//main//resources//guitarImage"))){
             BufferedImage bi = ImageIO.read(new ByteArrayInputStream(b));
             ImageIO.write(bi, ".jpeg", file);
         } catch (FileNotFoundException ex) {

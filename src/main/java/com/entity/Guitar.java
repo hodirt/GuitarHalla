@@ -43,6 +43,8 @@ public class Guitar implements Serializable {
     private double price;
     private int numberOfFrets;
     
+    private String imagePath;
+    
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "customer_guitar", joinColumns = @JoinColumn(name = "fk_guitar"), 
     inverseJoinColumns = @JoinColumn(name = "fk_customer"))
@@ -156,6 +158,14 @@ public class Guitar implements Serializable {
 
     public void setFirm(Firm firm) {
         this.firm = firm;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
     
     
