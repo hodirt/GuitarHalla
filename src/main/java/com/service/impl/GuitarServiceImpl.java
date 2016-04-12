@@ -5,6 +5,7 @@ import com.entity.Guitar;
 import com.repository.GuitarRepository;
 import com.service.GuitarService;
 import java.awt.image.BufferedImage;
+import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -63,8 +64,15 @@ public class GuitarServiceImpl implements GuitarService{
     @Override
     public void setImage(byte[] b) {
         try (FileOutputStream file = new FileOutputStream(new File("C://Users//home//Documents//NetBeansProjects//GHTest//src//main//resources//guitarImage"))){
-            BufferedImage bi = ImageIO.read(new ByteArrayInputStream(b));
-            ImageIO.write(bi, ".jpeg", new File("C://Users//home//Documents//NetBeansProjects//GHTest//src//main//resources//guitarImage"));
+              File f = new File("C://Users//home//Documents//NetBeansProjects//GHTest//src//main//resources//guitarImage");
+             
+              BufferedOutputStream bfs = new BufferedOutputStream(new FileOutputStream(f));
+              
+              bfs.write(b);
+              bfs.close();
+//            BufferedImage bi = ImageIO.read(new ByteArrayInputStream(b));
+//            bi.flush();
+           // ImageIO.write(bi, ".jpeg", new File("C://Users//home//Documents//NetBeansProjects//GHTest//src//main//resources//guitarImage"));
         } catch (FileNotFoundException ex) {
             Logger.getLogger(GuitarServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
