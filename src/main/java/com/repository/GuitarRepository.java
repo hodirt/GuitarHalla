@@ -15,6 +15,8 @@ public interface GuitarRepository extends JpaRepository<Guitar, Integer>{
     @Query("select g from Guitar g where g.name = :name")
     Guitar findByName(@Param("name") String name);
     
+    //@Query("select distinct g from Guitar g join fetch g.type t where t.guitarType = :guitarType")
+    //має повертатися Set, а не List
     @Query("select g from Guitar g join g.type t where t.guitarType = :guitarType")
     Guitar[] findByType(@Param("guitarType") String type);
     

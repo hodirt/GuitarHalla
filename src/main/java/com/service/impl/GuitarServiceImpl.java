@@ -33,6 +33,7 @@ public class GuitarServiceImpl implements GuitarService{
     
     @Override
     public Guitar addGuitar(Guitar guitar){
+        guitar.setImagePath(guitar.getName() + ".jpg");
         return guitarRepository.saveAndFlush(guitar);
     }
     
@@ -62,10 +63,11 @@ public class GuitarServiceImpl implements GuitarService{
     }
 
     @Override
-    public void setImage(byte[] b) {
-        try (FileOutputStream file = new FileOutputStream(new File("C://Users//home//Documents//NetBeansProjects//GHTest//src//main//resources//guitarImage"))){
-              File f = new File("C://Users//home//Documents//NetBeansProjects//GHTest//src//main//resources//guitarImage");
-             
+    public void setImage(byte[] b, String name) {
+        try {
+              File f = new File("C://Users//home//Documents//NetBeansProjects//GHTest//src//main//resources//" + name);
+              //BufferedImage img = new BufferedImage(40, 40, BufferedImage.TYPE_4BYTE_ABGR);
+              
               BufferedOutputStream bfs = new BufferedOutputStream(new FileOutputStream(f));
               
               bfs.write(b);

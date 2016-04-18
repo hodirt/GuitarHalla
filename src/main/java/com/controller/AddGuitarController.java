@@ -7,6 +7,7 @@ import com.service.impl.editor.ColorEditor;
 import com.service.impl.editor.FirmEditor;
 import com.service.impl.editor.GuitarTypeEditor;
 import com.service.impl.editor.TreeEditor;
+import java.io.IOException;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -41,13 +44,24 @@ public class AddGuitarController {
     @Autowired
     private GuitarTypeService guitarTypeService;
     
+    private String nameOfGuitar = "";
+    
     @RequestMapping(value = "/addGuitar", method = RequestMethod.POST)
     public String addGuitar(@Valid @ModelAttribute("guitar") Guitar guitar, BindingResult br){
         if(br.hasErrors()){
             return "addGuitar";
         }
+        nameOfGuitar = guitar.getName();
         guitarService.addGuitar(guitar);
-        return "redirect:/addGuitar";
+        return "redirect:/addImageToGuitar";
+    }
+    
+    @RequestMapping(value = "/addImageToGuitar", method = RequestMethod.POST)
+    public String addGuitarImg(@RequestParam(value = "file") MultipartFile file,  Integer id) throws IOException{
+        
+            guitarService.setImage(file.getBytes(), nameOfGuitar);
+            return "redirect:/";
+        
     }
     
     @RequestMapping("/addGuitar")

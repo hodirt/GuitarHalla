@@ -9,7 +9,7 @@ public interface GuitarService {
     Guitar addGuitar(String name, int idOfGuitarType, int idOfColor, int idOfTreeF, int idOfTreeMP, 
             int numberOfString, int numberOfFrets, String pickups, int price);
     Guitar addGuitar(Guitar guitar);
-    void setImage(byte[] b);
+    void setImage(byte[] b, String name);
     void delete(int id);
     Guitar getByName(String name);
     Guitar[] getByType(String type);

@@ -70,7 +70,7 @@ public class Tree implements Serializable{
 
     @Override
     public String toString() {
-        return "Tree " + treeType;
+        return treeType;
     }
     
     

@@ -56,6 +56,11 @@
         <put-attribute name="title" value="Electric Guitars"></put-attribute> 
     </definition> 
     
+    <definition name="bassGuitars" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/bassGuitars.jsp"></put-attribute> 
+        <put-attribute name="title" value="Bass Guitars"></put-attribute> 
+    </definition> 
+    
     <definition name="particularGuitar" extends="base.definition"> 
         <put-attribute name="body" value="/WEB-INF/views/particularGuitar.jsp"></put-attribute> 
         <put-attribute name="title" value="Guitar"></put-attribute> 
@@ -63,6 +68,11 @@
     
     <definition name="addGuitar" extends="base.definition"> 
         <put-attribute name="body" value="/WEB-INF/views/addGuitar.jsp"></put-attribute> 
+        <put-attribute name="title" value="Add Guitar"></put-attribute> 
+    </definition> 
+    
+    <definition name="addImage" extends="base.definition"> 
+        <put-attribute name="body" value="/WEB-INF/views/addImage.jsp"></put-attribute> 
         <put-attribute name="title" value="Add Guitar"></put-attribute> 
     </definition> 
     

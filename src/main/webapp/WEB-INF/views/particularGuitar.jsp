@@ -15,7 +15,8 @@
         <title>Guitar</title>
     </head>
     <body>
-        <form action="?${_csrf.parameterName}=${_csrf.token}" method="post">
+        <form action="?${_csrf.parameterName}=${_csrf.token}" method="get">
+            <img src="resources/${guitar.imagePath}">
             <table>
                 <tr>
                     <td>Name:</td>
@@ -35,7 +36,7 @@
                 </tr>
                 <tr>
                     <td>Number of strings:</td>
-                    <td>${guitar.numberOfString}</td>
+                    <td>${guitar.numberOfStrings}</td>
                 </tr>
                 <tr>
                     <td>Number of frets:</td>

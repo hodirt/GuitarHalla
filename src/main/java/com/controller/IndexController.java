@@ -29,13 +29,7 @@ public class IndexController {
         return "index";
     }
     
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String addLogoFile(@RequestParam(value = "file") MultipartFile file,  Integer id) throws IOException{
-        
-            guitarService.setImage(file.getBytes());
-            return "redirect:/";
-        
-    }
+    
 
 	
 

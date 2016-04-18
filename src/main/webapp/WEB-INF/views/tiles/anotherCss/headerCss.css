@@ -1,0 +1,13 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18.04.2016, 15:53:03
+    Author     : home
+*/
+
+.header{width:1300px; height:117px; background:url(/Guitar2.jpg); border-radius:3px;  margin:auto;
+text-align:center; padding-top:40px; margin-bottom:10px}
+.header>span{font-size:59px; font-family:Arial; font-weight:bold; color:#e0e1e1;}

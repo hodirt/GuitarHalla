@@ -17,6 +17,7 @@
     <body>
         <table>
             <f:form method="POST" modelAttribute="guitar">
+                
                 <tr>
                     <th>Name of guitar:</th>
                     <td><f:input path="name"/></td>
