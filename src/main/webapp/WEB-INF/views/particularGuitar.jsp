@@ -15,7 +15,7 @@
         <title>Guitar</title>
     </head>
     <body>
-        <form action="?${_csrf.parameterName}=${_csrf.token}" method="get">
+        <form action="?${_csrf.parameterName}=${_csrf.token}" method="post">
             <img src="resources/${guitar.imagePath}">
             <table>
                 <tr>
@@ -58,8 +58,10 @@
                     <td>Price:</td>
                     <td>${guitar.price}</td>
                 </tr>
+                
             </table>
-                <input type="submit" name="add to card"/>
+                <input name="guitarId" type="hidden" value="${guitar.id}">
+                <input type="submit" value="add to card">
         </form>
     </body>
 </html>

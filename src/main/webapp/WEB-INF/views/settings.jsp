@@ -24,6 +24,17 @@
                     <td>Last Name</td>
                     <td>${user.getLastName()}</td>
                 </tr>
+                <tr>
+                    <td>Buy List</td>
+                    <td><table><c:forEach var="g" items="${user.guitars}">
+                                <tr>
+                                    <td>${g}</td>
+                                    <td><c:url value="/settings/${g.id}" var="url"/>
+                                        <a href="${url}">remove</a>
+                                    </td>
+                                </tr>
+                            </c:forEach></table></td>
+                </tr>
             </table>
         </form>
     </body>

@@ -1,13 +1,16 @@
 package com.service.impl;
 
 import com.entity.Customer;
+import com.entity.Guitar;
 import com.entity.Role;
 import com.repository.CustomerRepository;
 import com.service.CustomerService;
 import java.util.List;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CustomerServiceImpl implements CustomerService{
@@ -51,6 +54,17 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public Customer findById(int id) {
         return customerRepository.findById(id);
+    }
+    
+    //Fetch
+    @Override
+    @Transactional
+    public Customer addToBuyList(Guitar guitar, int id) {    
+        Customer c =  customerRepository.findById(id);
+        Hibernate.initialize(c.getGuitars());
+        c.getGuitars().add(guitar);
+        customerRepository.save(c);
+        return c;
     }
     
 }

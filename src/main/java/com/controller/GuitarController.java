@@ -2,21 +2,18 @@
 package com.controller;
 
 import com.entity.Guitar;
+import com.service.CustomerService;
 import com.service.GuitarService;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
-import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
+import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.portlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -28,6 +25,9 @@ public class GuitarController {
     @Autowired
     private GuitarService guitarService;
     
+    @Autowired
+    private CustomerService customerService;
+    
     private Guitar guitar;
     
     @RequestMapping("/electricGuitars")
@@ -35,6 +35,14 @@ public class GuitarController {
         model.addAttribute("elGuitars", guitarService.getByType("electro"));
         return "electricGuitars";
     }
+    
+    @RequestMapping(value = "/particularGuitar", method = RequestMethod.POST)
+    public String addGuitarToCustomer(@RequestParam(value = "guitarId") int guitarId, Principal principal){
+        
+        customerService.addToBuyList(guitarService.getById(guitarId), Integer.parseInt(principal.getName()));
+        return "redirect:/";
+    }
+    
     @RequestMapping("/bassGuitars")
     public String showBassGuitars(Model model){
         model.addAttribute("bassGuitars", guitarService.getByType("bass"));
