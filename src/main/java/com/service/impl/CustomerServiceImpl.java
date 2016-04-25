@@ -57,6 +57,10 @@ public class CustomerServiceImpl implements CustomerService{
     }
     
     //Fetch
+    //Distinct
+    //HibernateMetamodel
+    //Specifications
+    //SpringDataPredicate
     @Override
     @Transactional
     public Customer addToBuyList(Guitar guitar, int id) {    
