@@ -71,4 +71,21 @@ public class CustomerServiceImpl implements CustomerService{
         return c;
     }
     
+    @Override
+    @Transactional
+    public List<Guitar> getBuyList(int id){
+        Customer c = customerRepository.findById(id);
+        Hibernate.initialize(c.getGuitars());
+        return c.getGuitars();
+    }
+    
+    @Override
+    @Transactional
+    public void deleteFromBuyList(int idCustomer, int idInCollection){
+        Customer c = customerRepository.findById(idCustomer);
+        Hibernate.initialize(c.getGuitars());
+        List<Guitar> guitars = c.getGuitars();
+        guitars.remove(idInCollection);
+        
+    }
 }

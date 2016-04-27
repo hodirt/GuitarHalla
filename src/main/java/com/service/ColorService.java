@@ -13,4 +13,5 @@ public interface ColorService {
     Color getById(int id);
     Color editColor(String color);
     List<Color> getAll();
+    
 }

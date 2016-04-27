@@ -11,5 +11,7 @@ public interface CustomerService {
     Customer addCustomer(Customer customer);
     Customer findById(int id);
     Customer addToBuyList(Guitar guitar, int id);
+    List<Guitar> getBuyList(int id);
     void delete(String id);
+    void deleteFromBuyList(int idCustomerm, int idInCollection);
 }

@@ -26,9 +26,9 @@
                 </tr>
                 <tr>
                     <td>Buy List</td>
-                    <td><table><c:forEach var="g" items="${user.guitars}">
+                    <td><table><c:forEach var="g" items="${guitars}">
                                 <tr>
-                                    <td>${g}</td>
+                                    <td>${g.name}</td>
                                     <td><c:url value="/settings/${g.id}" var="url"/>
                                         <a href="${url}">remove</a>
                                     </td>
