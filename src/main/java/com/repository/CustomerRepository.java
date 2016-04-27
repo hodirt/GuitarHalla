@@ -20,4 +20,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer>{
     
     @Query("select c from Customer c where c.id = :id")
     Customer findById(@Param("id") int id);
+    
+    //@Query("select new com.dto.CustomUser(u.id, u.name) from User u")
 }
