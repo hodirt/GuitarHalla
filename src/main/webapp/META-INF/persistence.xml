@@ -6,6 +6,7 @@
     <class>com.entity.Guitar</class>
     <class>com.entity.Tree</class>
     <class>com.entity.GuitarType</class>
+    <class>com.entity.Firm</class>
     <properties>
       <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
       <property name="hibernate.connection.url" value="jdbc:mysql://127.0.0.1:3306/guitarhalla"/>
@@ -14,6 +15,7 @@
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
       <property name="hibernate.hbm2ddl.auto" value="update"/>
       <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.event.merge.entity_copy_observer" value="allow"/> 
     </properties>
   </persistence-unit>
 </persistence>

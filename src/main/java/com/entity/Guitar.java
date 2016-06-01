@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Guitar implements Serializable {
@@ -29,6 +31,8 @@ public class Guitar implements Serializable {
     @ManyToOne
     private Tree treeOfFingerbar;
     
+    @Size(min = 1, max = 255)
+    @Pattern(regexp = "[A-Za-z]+", message = "field can not be empty")//дописати регулярний вираз, щоб і цифри бачило
     @UniqueField(message = "Guitar with this name already exists")
     private String name;
     

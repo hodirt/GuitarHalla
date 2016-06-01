@@ -26,7 +26,7 @@ public class Customer implements Serializable {
     private int id;
     
     @Size(min = 1, max = 255)
-    @Pattern(regexp = "[A-Za-z]+")
+    @Pattern(regexp = "[A-Za-z]+", message = "field can not be empty")
     @UniqueField(message = "customer with this name already exists")
     private String firstName;
     
